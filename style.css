@@ -219,7 +219,7 @@ body { font-family: var(--font); color: var(--dark); background: #fff; }
   height: auto;
   align-items: center;
   justify-content: center;
-  transform: translate(90px, 20px);
+  transform: translate(20px, 12px);
 }
 
 .hero-image-placeholder img {
