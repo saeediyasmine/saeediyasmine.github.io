@@ -93,7 +93,33 @@ document.getElementById('downloadCV').addEventListener('click', function (e) {
     .catch(() => alert('Erreur lors du téléchargement du fichier.'));
 });
 
-const filterButtons = document.querySelectorAll('.filter-btn');
+// ── BURGER MENU ──
+(function() {
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!burgerBtn || !mobileMenu) return;
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    burgerBtn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    burgerBtn.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  }
+
+  burgerBtn.addEventListener('click', openMenu);
+  if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
+
+  // Ferme le menu au clic sur un lien
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+})();
 const projectCards = document.querySelectorAll('.project-card');
 
 filterButtons.forEach(button => {

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="projects.css"/>
+  <link rel="stylesheet" href="responsive.css"/>
 </head>
 <body>
 
@@ -29,12 +30,27 @@
           <li><a href="projects.html">Tous voir</a></li>
         </ul>
       </li>
-
-
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+
+    <!-- Burger button (mobile only) -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fermer">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="index.html#about-me" class="mobile-nav-link">À propos</a>
+  <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+  <a href="projects.html" class="mobile-nav-link">Projets</a>
+  <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+</div>
 
 <!-- PROJECTS -->
 <div class="projects-wrapper">
