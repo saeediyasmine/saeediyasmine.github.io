@@ -1,0 +1,643 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink: #F43E7B;
+  --pink-light: #f7b6d2;
+  --pink-bg: #fce4f0;
+  --dark: #300D19;
+  --gray: #555;
+  --light-gray: #f5f5f5;
+  --border: #ddd;
+  --font: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--dark); background: #fff; }
+
+/* ── NAV ── */
+.navbar {
+  height: 100px;
+  background-color: #ffffff;
+  display: flex;
+  width: 1500px;
+  padding: 22px 24px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Reste en haut au scroll */
+  top: 0;
+  z-index: 1000;
+  font-family: var(--font);
+  background: rgba(255, 255, 255, 0.00);
+}
+
+.nav-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between; /* Logo à gauche, liens à droite */
+  align-items: center;
+}
+
+.nav-links li.dropdown {
+  position: relative; /* Important pour positionner le sous-menu juste en dessous */
+}
+.nav-links li.dropdown:hover .dropdown-menu {
+  display: block; /* Affiche le sous-menu au survol */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Se place juste en dessous du texte "Projects" */
+  left: 50%;
+  transform: translateX(-50%); /* Centre le sous-menu par rapport au mot */
+  background-color: #ffffff;
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: none; /* CACHÉ */
+  min-width: 120px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  font-size: 14px !important;
+  color: var(--dark) !important;
+  white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+  text-shadow: none !important; /* On peut enlever l'ombre pour le sous-menu */
+}
+
+.dropdown-menu a:hover {
+  color: var(--pink) !important;
+}
+
+/* Petit ajustement pour la navbar (enlève le width fixe qui risque de casser le design) */
+.navbar {
+  width: 100%; /* Utilise 100% au lieu de 1500px pour la réactivité */
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Style du Logo */
+.nav-logo {
+  color: #300D19;
+  font-family: Mogra;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -9.1px;
+  width: 94px;
+  height: 74px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+.nav-logo a {
+  text-decoration: none !important;
+  color : inherit;
+}
+
+/* Liste des liens */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px; /* Espace entre les mots */
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark); /* Utilise ton #1a1a1a */
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol ou page active */
+.nav-links a:hover, 
+.nav-links a.active {
+  color: var(--pink); /* Utilise ton rose #e91e7a */
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cache les liens sur mobile pour faire un menu burger plus tard */
+  }
+  .nav-container {
+    padding: 0 20px;
+  }
+}
+
+
+/* ── SECTION COMMON ── */
+section { padding: 60px 48px; max-width: 900px; margin: 0 auto; }
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+/* ── PROJECTS ── */
+/* Utilisation de tes variables :root */
+.projects-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+#projects {
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 50px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+/* GRILLE FORCÉE SUR 3 COLONNES */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* La Carte */
+.project-card {
+  border: 2px solid var(--pink);
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 0;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  height: 480px;
+  width: 416px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+
+.project-img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: transparent;
+  z-index: 0;
+}
+
+/* Le bloc d'info rose */
+.project-info {
+  background-color: var(--pink);
+  border-radius: 30px;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.project-date {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.project-categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* --- Style de base commun --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px; /* Plus de padding pour la forme pilule */
+  border-radius: 50px; /* Secret de la forme capsule */
+  font-size: 11px;
+  font-weight: 700; /* Gras pour l'impact, comme le bouton */
+  text-transform: uppercase;
+  color: #ffffff; /* Texte blanc sur dégradé */
+  border: none; /* Pas de bordure pour ce style */
+  
+  /* Ajout de l'ombre portée pour le relief */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+  filter: saturate(0.8);
+  backdrop-filter: blur(4px);
+  
+  transition: all 0.3s ease; /* Pour les effets au survol */
+}
+
+
+/* Effet optionnel : augmente légèrement l'ombre au survol de la carte */
+.project-card:hover .badge {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+/* Bouton Noir */
+.btn-savoir {
+  background-color: var(--dark);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: var(--font);
+  font-size: 13px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.project-filters {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+/* Style de base (Neutre) */
+/* --- Style de base des boutons de filtre --- */
+.filter-btn {
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: transparent; /* Fond vide par défaut */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: 2px solid; /* On définit l'épaisseur, la couleur vient après */
+}
+
+/* --- Bouton TOUS (Ton Rose #F43E7B) --- */
+.filter-btn[data-filter="all"] {
+  color: var(--pink);
+}
+.filter-btn[data-filter="all"].active, 
+.filter-btn[data-filter="all"]:hover {
+  background: var(--pink);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(244, 62, 123, 0.3);
+}
+
+.btn-code {
+  color: var(--pink-light);
+}
+.btn-code.active, .btn-code:hover {
+  background: var(--pink-light);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 154, 216, 0.781);
+}
+
+/* --- Bouton UI DESIGN (Violet lumineux) --- */
+.btn-ui {
+  color: var(--pink);
+}
+.btn-ui.active, .btn-ui:hover {
+  background: linear-gradient(135deg, #fe67ab 0%, #f23775 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(252, 15, 157, 0.4);
+}
+
+/* --- Bouton BRANDING (Orange flamboyant) --- */
+.btn-branding {
+  color: var(--dark);
+}
+.btn-branding.active, .btn-branding:hover {
+  background: linear-gradient(135deg, #a6089c 0%, #5b0561 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(169, 4, 103, 0.4);
+}
+.project-card.hide {
+    display: none !important;
+}
+
+/* Optionnel : pour que l'affichage soit fluide */
+.project-card.show {
+    display: flex; /* ou block selon ton design */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.project-intro {
+    font-size: 1.1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    margin: 50px auto;
+    font-weight: 500;
+    text-align: left;
+}
+
+.project-intro strong {
+    color: #F43E7B;
+    font-weight: 600;
+}
+
+/* ── FOOTER / CONTACT ── */
+#contact {
+  background: var(--dark);
+  color: #fff;
+  padding: 60px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 100%;
+}
+.footer-left { display: flex; flex-direction: column; gap: 16px; font-weight: 700; justify-content: space-between;}
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  background: #444;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.footer-tagline { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 16px; }
+.footer-info { font-size: 13px; color: #bbb; line-height: 2; }
+.footer-info a { color: #bbb; text-decoration: none; }
+.footer-info a:hover { color: var(--pink); }
+.footer-cv {
+  display: inline-block;
+  color: #bbb;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 12px; color: #bbb; }
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color .2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--pink); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.btn-envoyer {
+  align-self: flex-end;
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity .2s;
+}
+.btn-envoyer:hover { opacity: .85; }
+
+/* ── OVERLAY ── */
+.overlay-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(48, 13, 25, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.overlay-backdrop.active {
+  display: flex;
+  animation: backdropIn 0.3s ease forwards;
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.overlay-box {
+  background: #fff;
+  border-radius: 32px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: cardIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  box-shadow: 0 32px 80px rgba(48, 13, 25, 0.35);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.overlay-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(48, 13, 25, 0.08);
+  border: none;
+  color: var(--dark);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+
+.overlay-close:hover {
+  background: var(--pink);
+  color: #fff;
+}
+
+.overlay-body {
+  padding: 28px 32px 32px;
+}
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.overlay-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.overlay-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--pink);
+  background: var(--pink-bg);
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.overlay-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.overlay-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.overlay-badges .badge {
+  background: linear-gradient(135deg, var(--pink) 0%, #c42f65 100%);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(244, 62, 123, 0.3);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.badge {
+  background-color: var(--pink);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#overlay-img {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: top;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 9px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+ 
+.social-btn svg {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+ 
+.social-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+  color: #fff;
+}
+ 
+/* LinkedIn garde sa couleur signature au hover */
+.social-btn--linkedin:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+}

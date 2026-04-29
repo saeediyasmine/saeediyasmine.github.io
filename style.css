@@ -1,0 +1,1247 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink: #F43E7B;
+  --pink-light: #f7b6d2;
+  --pink-bg: #fce4f0;
+  --dark: #300D19;
+  --gray: #555;
+  --light-gray: #f5f5f5;
+  --border: #ddd;
+  --font: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--dark); background: #fff; }
+
+/* ── NAV ── */
+.navbar {
+  height: 100px;
+  background-color: #ffffff;
+  display: flex;
+  width: 1500px;
+  padding: 22px 24px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Reste en haut au scroll */
+  top: 0;
+  z-index: 1000;
+  font-family: var(--font);
+  background: rgba(255, 255, 255, 0.00);
+}
+
+.nav-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between; /* Logo à gauche, liens à droite */
+  align-items: center;
+}
+
+.nav-links li.dropdown {
+  position: relative; /* Important pour positionner le sous-menu juste en dessous */
+}
+.nav-links li.dropdown:hover .dropdown-menu {
+  display: block; /* Affiche le sous-menu au survol */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Se place juste en dessous du texte "Projects" */
+  left: 50%;
+  transform: translateX(-50%); /* Centre le sous-menu par rapport au mot */
+  background-color: #ffffff;
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: none; /* CACHÉ */
+  min-width: 120px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  font-size: 14px !important;
+  color: var(--dark) !important;
+  white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+  text-shadow: none !important; /* On peut enlever l'ombre pour le sous-menu */
+}
+
+.dropdown-menu a:hover {
+  color: var(--pink) !important;
+}
+
+/* Petit ajustement pour la navbar (enlève le width fixe qui risque de casser le design) */
+.navbar {
+  width: 100%; /* Utilise 100% au lieu de 1500px pour la réactivité */
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Style du Logo */
+.nav-logo {
+  color: #300D19;
+  font-family: Mogra;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -9.1px;
+  width: 94px;
+  height: 74px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+.nav-logo a {
+  text-decoration: none !important;
+  color : inherit;
+}
+
+/* Liste des liens */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px; /* Espace entre les mots */
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark); /* Utilise ton #1a1a1a */
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol ou page active */
+.nav-links a:hover, 
+.nav-links a.active {
+  color: var(--pink); /* Utilise ton rose #e91e7a */
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cache les liens sur mobile pour faire un menu burger plus tard */
+  }
+  .nav-container {
+    padding: 0 20px;
+  }
+}
+
+/* ── HERO ── */
+/* --- Styles de la Section Héros --- */
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 90px 50px;
+  background-color: #ffffff;
+  font-family: var(--font);
+}
+
+.hero-container {
+  width: 100%;
+  margin: 0 auto;  
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+/* --- Colonne Gauche : Texte --- */
+.hero-text-column {
+  margin-left: -200px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 800; /* Plus épais pour un titre fort */
+  color: var(--dark); /* Utilise ton #1a1a1a */
+  line-height: 137.5%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Les spans individuels pour forcer le passage à la ligne */
+.hero-title span {
+  display: block;
+}
+
+/* Le mot "Yasmine" en rose */
+.hero-title .highlight {
+  color: var(--pink); /* Utilise ton rose #e91e7a */
+  display: inline; /* Pour qu'il reste sur la même ligne que "Moi c'est" */
+}
+
+/* Ton Bouton */
+.hero-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--pink); /* Ton rose principal */
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Petite ombre sous le bouton */
+  max-width: fit-content; /* S'adapte au texte pour ne pas être trop large */
+}
+
+.hero-btn:hover {
+  background-color: var(--pink-light); /* Une variante plus foncée du rose (optionnel, défini le dans tes vars) */
+  transform: translateY(-2px); /* Petit effet de survol */
+}
+
+/* --- Colonne Droite : Image --- */
+.hero-image-column {
+  flex: 1; /* L'image prend moins de place (40-45%) */
+  display: flex;
+  justify-content: center; /* Aligne l'image à droite */
+}
+
+.home__blob {
+  margin-right: -300px;
+  width: 400px;
+  fill: var(--pink);
+}
+
+.home__blob-img {
+  width: 300px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  transform: translate(90px, 20px);
+}
+
+.hero-image-placeholder img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-text-column {
+    text-align: left;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 24px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+}
+
+/* ── PINK BANNER ── */
+.banner {
+  background-color: var(--pink); /* Utilise ta variable rose */
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  font-family: var(--font);
+}
+.banner-contenair{
+  max-width: 1200px;
+  margin: 0 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.banner-text {
+  white-space: nowrap;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.banner-text .num {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+}
+.banner-icons {
+  display: flex;
+  width: 1440px;
+  padding: 28px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+}
+.banner-icons .icon-box {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.icon-box img{
+  height: 62px;
+  width: auto;
+}
+
+/* ── SECTION COMMON ── */
+section { padding: 60px 48px; max-width: 900px; margin: 0 auto; }
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+/* ── PROJECTS ── */
+/* Utilisation de tes variables :root */
+.projects-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+#projects {
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 50px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+/* GRILLE FORCÉE SUR 3 COLONNES */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* La Carte */
+.project-card {
+  border: 2px solid var(--pink);
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 0;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  height: 480px;
+  width: 416px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+
+.project-img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: transparent;
+  z-index: 0;
+}
+
+/* Le bloc d'info rose */
+.project-info {
+  background-color: var(--pink);
+  border-radius: 30px;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.project-date {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.project-categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* --- Style de base commun --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px; /* Plus de padding pour la forme pilule */
+  border-radius: 50px; /* Secret de la forme capsule */
+  font-size: 11px;
+  font-weight: 700; /* Gras pour l'impact, comme le bouton */
+  text-transform: uppercase;
+  color: #ffffff; /* Texte blanc sur dégradé */
+  border: none; /* Pas de bordure pour ce style */
+  
+  /* Ajout de l'ombre portée pour le relief */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+  filter: saturate(0.8);
+  backdrop-filter: blur(4px);
+  
+  transition: all 0.3s ease; /* Pour les effets au survol */
+}
+
+
+/* Effet optionnel : augmente légèrement l'ombre au survol de la carte */
+.project-card:hover .badge {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+/* Bouton Noir */
+.btn-savoir {
+  background-color: var(--dark);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-family: var(--font);
+  font-size: 13px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.project-filters {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  border-radius: 50px;
+  background: transparent; /* Fond vide par défaut */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: 2px solid; /* On définit l'épaisseur, la couleur vient après */
+}
+
+/* --- Bouton TOUS (Ton Rose #F43E7B) --- */
+.filter-btn[data-filter="all"] {
+  color: var(--pink);
+}
+.filter-btn[data-filter="all"].active, 
+.filter-btn[data-filter="all"]:hover {
+  background: var(--pink);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(244, 62, 123, 0.3);
+}
+
+.filter-btn[data-filter="all"] {
+  color: var(--pink);
+}
+.filter-btn[data-filter="all"].active, 
+.filter-btn[data-filter="all"]:hover {
+  background: var(--pink);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(244, 62, 123, 0.3);
+}
+
+.btn-code {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.btn-code.active, .btn-code:hover {
+  background: var(--pink-light);
+  color: #fff;
+  border-color: var(--pink-light);
+  box-shadow: 0 4px 16px rgba(244, 62, 123, 0.4);
+}
+ 
+/* --- Bouton CMS — Rose foncé #c42f65 --- */
+.btn-cms {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+.btn-cms.active, .btn-cms:hover {
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
+  box-shadow: 0 4px 16px rgba(196, 47, 101, 0.4);
+}
+ 
+/* --- Bouton UI — Dark bordeaux #300D19 --- */
+.btn-ui {
+  border-color: var(--dark);
+  color: var(--dark);
+}
+.btn-ui.active, .btn-ui:hover {
+  background: var(--dark);
+  color: #fff;
+  border-color: var(--dark);
+  box-shadow: 0 4px 16px rgba(48, 13, 25, 0.35);
+}
+
+.project-card.hide {
+    display: none !important;
+}
+
+/* Optionnel : pour que l'affichage soit fluide */
+.project-card.show {
+    display: flex; /* ou block selon ton design */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.project-intro {
+    font-size: 1.1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    margin: 50px auto;
+    font-weight: 500;
+    text-align: left;
+}
+
+.project-intro strong {
+    color: #F43E7B;
+    font-weight: 600;
+}
+
+
+.project-filters {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 850px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.services-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Base de la carte */
+.service-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  border: 4px solid transparent; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Boite pour l'icône / image */
+.service-icon-box {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px; /* Taille de l'icône si font-awesome */
+}
+
+/* Texte sous l'icône */
+.service-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gray);
+  margin: 0;
+}
+
+/* --- Variantes de couleurs --- */
+
+/* Carte 1 - Rose très clair */
+.card-light-pink { border-color: #ffeadf; }
+.bg-light-pink { background-color: #ffeadf; color: #f7b6d2; }
+
+/* Carte 2 - Rose moyen */
+.card-medium-pink { border-color: #ffb7ce; }
+.bg-medium-pink { background-color: #ffb7ce; color: var(--pink); }
+
+/* Carte 3 - Violet/Prune */
+.card-dark-purple { border-color: #8e5d6e; }
+.bg-dark-purple { background-color: #8e5d6e; color: #351a2a; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.about-me-section {
+  max-width: 1345px; /* Aligné avec le reste de ton site */
+  margin: 0 auto;
+  padding: 80px 48px;
+  font-family: var(--font);
+}
+
+.about-me-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 40px;
+  letter-spacing: -0.5px; /* Un peu plus serré pour le style moderne */
+}
+
+.about-me-content {
+  max-width: 1345px; /* On limite un peu la largeur du texte pour la lecture */
+}
+
+.about-me-content p {
+  font-size: 18px;
+  line-height: 1.7; /* Très important pour l'aspect "propre" de ta maquette */
+  color: var(--dark);
+  font-weight: 600; /* Le texte sur ton image semble un peu épais */
+  margin-bottom: 30px;
+}
+
+/* On peut adoucir légèrement le deuxième paragraphe si besoin */
+.about-me-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .about-me-section {
+    padding: 60px 24px;
+  }
+  
+  .about-me-title {
+    font-size: 28px;
+  }
+  
+  .about-me-content p {
+    font-size: 16px;
+  }
+}
+
+
+.skills-section {
+  max-width: 1235px;
+  margin: 0 auto;
+  padding: 60px 0;
+  align-items: flex-start;
+  font-family: var(--font);
+}
+
+.skills-main-title {
+  font-size: 32px;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+/* Container des boutons de filtre */
+.skills-filters {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 50px;
+  margin: 24px 0;
+}
+
+/* Style de base des boutons */
+.filter-btn {
+  padding: 10px 35px;
+  border-radius: 50px;
+  background: transparent;
+  font-family: var(--font);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid; /* On laisse la couleur se définir par les classes ci-dessous */
+}
+
+/* Couleurs spécifiques par bouton */
+.btn-all  { border-color: var(--pink); color: var(--dark); }
+.btn-code { border-color: var(--pink-light); color: var(--dark); }
+.btn-cms  { border-color: var(--pink); color: var(--dark); }
+.btn-ui   { border-color: var(--dark); color: var(--dark); }
+
+
+.btn-all.active {
+  background-color: var(--pink);
+  color: #fff !important;
+}
+
+.btn-code.active {
+  background-color: var(--pink-light);
+  color: #fff !important;
+}
+
+.btn-cms.active {
+  background-color: var(--pink);
+  color: #fff !important;
+}
+
+.btn-ui.active {
+  background-color: var(--dark);
+  color: #fff !important;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espace entre chaque catégorie */
+  margin-top: 40px;
+}
+
+/* Une ligne complète (Titre + Logos) */
+.skills-row {
+  display: flex;
+  align-items: center; /* Aligne verticalement le titre et les images */
+  transition: all 0.4s ease;
+  min-height: 80px;
+}
+
+/* Cache les lignes filtrées via JS */
+.skills-row.hidden {
+  display: none;
+}
+
+/* Le titre à gauche (ex: Langages Front-End :) */
+.skills-cat-title {
+  width: 280px; /* Largeur fixe pour aligner le début des logos */
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  flex-shrink: 0; /* Empêche le titre de rétrécir */
+}
+
+/* Le groupe de logos à droite */
+.skills-icons {
+  display: flex;
+  gap: 30px; /* Espace entre chaque bloc logo+texte */
+  flex-wrap: wrap;
+}
+
+/* Chaque bloc individuel (Image + Texte) */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 70px;
+}
+
+/* Style des images SVG/PNG */
+.skill-item img {
+  height: 40px; /* Taille uniforme pour tous les logos */
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(11%) sepia(18%) saturate(1535%) hue-rotate(296deg) brightness(91%) contrast(92%);
+}
+
+/* Le petit texte sous le logo */
+.skill-item span {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .skills-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .skills-cat-title {
+    width: 100%;
+  }
+  .skills-icons {
+    gap: 20px;
+  }
+}
+
+
+
+.experience-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 52px;
+  font-family: var(--font);
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 70px;
+  margin-left: -20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Chaque ligne (Item) --- */
+.tl-item {
+  display: flex;
+  width: 100%;
+  min-height: 230px;
+}
+
+/* --- Les Colonnes (Contenu Gauche / Centre / Droite) --- */
+.tl-content {
+  flex: 1;
+  width: 45%; /* Largeur égale pour les deux côtés */
+  align-items: center; 
+  flex-direction: row;
+}
+
+/* Colonne Gauche */
+.tl-left {
+  padding-right: 50px;
+  text-align: left;
+}
+
+/* Colonne Droite */
+.tl-right {
+  padding-left: 50px;
+  text-align: left;
+}
+
+/* --- L'Axe Central --- */
+.tl-center {
+  width: 4px; /* Épaisseur de la ligne */
+  background-color: var(--dark); /* Couleur marron */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0; /* Empêche l'axe de s'écraser */
+}
+
+/* Le point blanc sur la ligne */
+.tl-dot {
+  position: absolute;
+  top: 10px;
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border: 3px solid var(--dark);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* --- Style du texte --- */
+.tl-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.tl-text {
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* --- Les bulles d'images (Grisées) --- */
+/* Le conteneur cercle */
+.tl-image-circle {
+    width: 140px;
+    height: 140px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    overflow: hidden; /* INDISPENSABLE : Coupe tout ce qui dépasse du cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Centre le cercle dans sa colonne */
+}
+
+/* L'image à l'intérieur */
+.tl-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* MAGIE : Remplit le cercle sans écraser l'image */
+    object-position: center; /* Centre le sujet de la photo */
+}
+
+/* Centrer l'image dans la colonne de droite */
+.tl-right .tl-image-circle {
+    margin-left: 0; 
+}
+
+/* Centrer l'image dans la colonne de gauche */
+.tl-left .tl-image-circle {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+/* RESPONSIVE : Sur mobile on tout aligner à gauche */
+@media (max-width: 768px) {
+  .tl-item {
+    flex-direction: column;
+    padding-left: 30px;
+    border-left: 3px solid var(--dark);
+    margin-left: 20px;
+  }
+  .tl-content {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .tl-center {
+    display: none; /* On cache l'axe central complexe sur mobile */
+  }
+}
+
+
+/* ── FOOTER / CONTACT ── */
+#contact {
+  background: var(--dark);
+  color: #fff;
+  padding: 60px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 100%;
+}
+.footer-left { display: flex; flex-direction: column; gap: 16px; font-weight: 700; justify-content: space-between;}
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  background: #444;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.footer-tagline { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 16px; }
+.footer-info { font-size: 13px; color: #bbb; line-height: 2; }
+.footer-info a { color: #bbb; text-decoration: none; }
+.footer-info a:hover { color: var(--pink); }
+.footer-cv {
+  display: inline-block;
+  color: #bbb;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 12px; color: #bbb; }
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color .2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--pink); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.btn-envoyer {
+  align-self: flex-end;
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity .2s;
+}
+.btn-envoyer:hover { opacity: .85; }
+
+/* ── OVERLAY ── */
+.overlay-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(48, 13, 25, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.overlay-backdrop.active {
+  display: flex;
+  animation: backdropIn 0.3s ease forwards;
+}
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.overlay-box {
+  background: #fff;
+  border-radius: 32px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: cardIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  box-shadow: 0 32px 80px rgba(48, 13, 25, 0.35);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.overlay-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(48, 13, 25, 0.08);
+  border: none;
+  color: var(--dark);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+
+.overlay-close:hover {
+  background: var(--pink);
+  color: #fff;
+}
+
+.overlay-body {
+  padding: 28px 32px 32px;
+}
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.overlay-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.overlay-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--pink);
+  background: var(--pink-bg);
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.overlay-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.overlay-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.overlay-badges .badge {
+  background: linear-gradient(135deg, var(--pink) 0%, #c42f65 100%);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(244, 62, 123, 0.3);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.badge {
+  background-color: var(--pink);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#overlay-img {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: top;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 9px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font);
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+ 
+.social-btn svg {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+ 
+.social-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+  color: #fff;
+}
+ 
+/* LinkedIn garde sa couleur signature au hover */
+.social-btn--linkedin:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+}

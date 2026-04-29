@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yasmine Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="projects.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html">Y_</a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about-me">A propos</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li class="dropdown">
+        <a href="#projects">Projets</a>
+        <ul class="dropdown-menu">
+          <li><a href="projects.html">Tous voir</a></li>
+        </ul>
+      </li>
+
+
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PROJECTS -->
+<div class="projects-wrapper">
+  <section id="projects">
+    <div class="section-title">Projets</div>
+
+      <p class="project-intro">Bienvenue sur ma page de projets. Vous trouverez ici une sélection de mes travaux regroupant le code, l'UI design et le branding. Mon approche consiste à concevoir des solutions numériques cohérentes, alliant rigueur technique et esthétique. Utilisez les filtres ci-dessous pour explorer mes réalisations par domaine d'expertise.</p>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn btn-code" data-filter="cat-code">Code</button>
+        <button class="filter-btn btn-ui" data-filter="cat-ui">UI Design</button>
+        <button class="filter-btn btn-branding" data-filter="cat-branding">Branding</button>
+      </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card cat-code" onclick="openOverlay(
+        'Ferme Maher – Oasis', 
+        'Janvier 2026', 
+        'Développement d\'une application Full-stack permettant de privatiser des espaces de loisirs au Maroc. J\'ai implémenté un système d\'authentification sécurisé et une gestion de base de données optimisée.', 
+        ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Auth.js v5', 'Prisma', 'PostgreSQL'],
+        'img/fermemaher.png'
+      )">
+        <div class="project-img"><img src="img/fermemaher.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">Ferme Maher</span>
+            <span class="project-date">En cours</span>
+          </div>
+          <p class="project-desc">Plateforme de réservation de loisirs. Digitalisation complète de l'expérience client.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+      <div class="project-card cat-code" onclick="openOverlay(
+        'On Sort ?', 
+        'Mars 2026', 
+        'On sort est une application mobile dédiée à l’organisation d’activités en France, pensée spécialement pour les groupes d’amis. Son objectif est de simplifier la prise de décision collective et de rendre l’organisation de sorties plus fluide, interactive et équitable.', 
+        ['CakePHP', 'MySQL'],
+        'img/onsort2.avif'
+      )">
+        <div class="project-img"><img src="img/onsort.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">On sort ?</span>
+            <span class="project-date">Mars 2026</span>
+          </div>
+          <p class="project-desc">Projet d'école: Développement d'une application avec la contrainte d'utiliser CakePHP sans recourir au scaffolding en seulement 4 jours.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+      <div class="project-card cat-code" onclick="openOverlay(
+        'The Glazed', 
+        'Février 2026', 
+        'Développement d’un jeu de survie narratif réalisé dans le cadre d’un défi pédagogique de 4 jours. Au-delà de la programmation, j\’ai conçu l’intégralité de l’univers (Lore) et défini la direction scénaristique. L\'enjeu majeur a été de créer une expérience où chaque décision du joueur entraîne des conséquences concrètes sur l\'évolution de l\'histoire. J\'ai mis en place un système de variables complexes pour gérer l\'impact des choix sur le gameplay et la survie du personnage, forçant le joueur à des choix moraux et stratégiques difficiles.', 
+        ['HMTL', 'CSS', 'Vanilla JS'],
+        'img/theglazed.png'
+      )">
+        <div class="project-img"><img src="img/tg.jpg" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">The Glazed</span>
+            <span class="project-date">Février 2026</span>
+          </div>
+          <p class="project-desc">Projet d'école : Développement d'un jeu vidéo de survie narratif avec pour contrainte de respecter un thème lié à la température, réalisé en 4 jours.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+      <div class="project-card cat-ui cat-branding" onclick="openOverlay(
+        'Atelier Lotus', 
+        'Mars 2026', 
+        'J\'ai réalisé la création de l\'identité visuelle d\'un bar à plantes. Ce projet repose sur la conception d\'une marque unique alliant nature et convivialité. Le concept s\'articule autour du Lotus, symbole de pureté et de renouveau, qui a servi de socle à la création du logotype. J\'ai ensuite décliné l\'intégralité de la direction artistique sur des supports Print (papeterie) et Web (interface, newsletter et contenu pour les réseaux sociaux). Vous trouverez l\'ensemble de ces réalisations via le lien ci-dessous.\n \nhttps://www.figma.com/design/FE7Pk0eub5NJHbcb1X2IS0/Atelier-Lotus?node-id=0-1&t=RKT3UVRN86ArrYog-1',
+        ['Adobe Illustrator', 'Figma'],
+        'img/atlot.png'
+      )">
+        <div class="project-img"><img src="img/lotus.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">Atelier Lotus</span>
+            <span class="project-date">Mars 2026</span>
+          </div>
+          <p class="project-desc">Projet d'école : Développement d'une marque fictive et de son branding autour d'un sujet imposé.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+
+      <div class="project-card cat-ui cat-branding" onclick="openOverlay(
+        'Association Un cadeau pour la vie', 
+        'Mars 2025',
+        'Dans le cadre d\'un projet d\'équipe, nous deviens contacter une association afin de leur proposé nos services marketing, créatif et technologique afin d\'améliorer leur présence en ligne. J\'ai réalisé la refonte visuelle du site de l\'association un cadeau pour la vie en intégrant la nouvelle identité visuelle. J\'ai conçu une interface moderne et épurée, tout en veillant à ce que l\'expérience utilisateur soit fluide et intuitive. Mon travail a permis de renforcer l\'impact visuel de l\'association et d\'améliorer la navigation pour les utilisateurs en hiérarchisant les contenus et en venant à l\'essentiel, tout en mettant en valeur les missions et les actions de l\'association. \n \n https://www.figma.com/design/0GllcxB3akI0ovxbB0qwt2/Un-cadeau-pour-la-vie?node-id=0-1&t=8lWMBxDLjkJc74cX-1',
+        ['Figma'],
+        'img/cadeau.png'
+      )">
+        <div class="project-img"><img src="img/logocadeau.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">Association : Un cadeau <br> pour la vie</span>
+            <span class="project-date">Mars 2025</span>
+          </div>
+          <p class="project-desc">En collaboration avec une équipe, réalisation d'une refonte visuelle du site de l'association un cadeau pour la vie en intégrant la nouvelle identité visuelle.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+
+      <div class="project-card cat-ui cat-branding" onclick="openOverlay(
+        'Le rûcher de l\'Ours', 
+        'Avril 2025',
+        'Refonte globale : Identité visuelle et expérience utilisateur du Rucher de l\'Ours. Dans le cadre de mon examen de fin d\'année, j\'ai réalisé la refonte complète de la marque. Après une analyse marketing approfondie, j\'ai redéfini une identité visuelle forte, plus en adéquation avec les attentes du public cible. J\'ai ensuite conçu une interface web moderne, épurée et entièrement responsive, afin d\'offrir une expérience utilisateur fluide et actuelle. \n \nhttps://www.figma.com/design/lGmcs6RyYmusC58aqHyDSw/Sans-titre?node-id=0-1&t=Lsnv34lGsT5bSfwr-1',
+        ['Figma', 'Adobe Illustrator'],
+        'img/rucher.png'
+      )">
+        <div class="project-img"><img src="img/ours.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">Le rûcher de l'Ours</span>
+            <span class="project-date">Avril 2025</span>
+          </div>
+          <p class="project-desc">Projet d'école : Refonte visuelle du branding et l'ui du rûcher de l'Ours.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+
+
+      <div class="project-card cat-code cat-ui cat-branding" onclick="openOverlay(
+        'Pas de sens patience', 
+        'Janvier 2025', 
+        'Dans le cadre de ce projet d\'équipe, j\'ai pris en charge l\'intégralité du volet numérique tout en contribuant à la réalisation des supports physiques. J\'ai conçu les maquettes UI  du site web avant d\'en assurer personnellement le développement sous WordPress toute en intégrant le responsive. En parallèle, j\'ai apporté mon soutien à la conception print, notamment pour le graphisme des cartes et du packaging, afin de garantir une identité visuelle cohérente et accessible sur tous les supports. \n \nhttps://www.figma.com/design/tcHjTks8HdhtuIpPDDkYBO/Pas-de-sens-patience?node-id=0-1&t=1TBIrQtZPu0zjCgD-1', 
+        ['Figma', 'Adobe Illustrator', 'Wordpress'],
+        'img/pasdes.png'
+      )">
+        <div class="project-img"><img src="img/patience.png" alt=""></div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-name">Pas de sens patience</span>
+            <span class="project-date">Janvier 2025</span>
+          </div>
+          <p class="project-desc">Projet d'école : Développement d'un jeu de société inclusif en collaboration avec une équipe.</p>
+          <button class="btn-savoir">En savoir plus ›</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="footer-left">
+    <div class="footer-logo"></div>
+    <p class="footer-tagline">Vous souhaitez en savoir plus ou<br>discuter d'un projet ? Parlons-en<br>ensemble.</p>
+    <div class="footer-info">
+      <div>📍 Basé dans le Val d'Oise / Île-de-France</div>
+      <div>✉️ <a href="mailto:saeedismailyasmine@gmail.com">saeedismailyasmine@gmail.com</a></div>
+      <div>💼 Disponible pour une alternance dès aujourd'hui</div>
+    </div>
+    <div class="footer-socials">
+      <a href="https://github.com/saeediyasmine" target="_blank" class="social-btn" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/yasmine-saeed-ismail-87a6b2337" target="_blank" class="social-btn social-btn--linkedin" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </div>
+    <a class="footer-cv" id="downloadCV" href="img/cvDev_last.pdf">Télécharger mon CV ici</a>
+  </div>
+ 
+  <div class="contact-container">
+    <form class="contact-form" action="https://formspree.io/f/xjgjzvpa" method="POST">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom</label>
+          <input type="text" name="firstname" placeholder="Prénom" required />
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" name="lastname" placeholder="Nom" required />
+        </div>
+      </div>
+ 
+      <div class="form-group">
+        <label>Numéro de téléphone</label>
+        <input type="tel" name="phone" placeholder="06 23 45 67 89" />
+      </div>
+ 
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="votre@email.com" required />
+      </div>
+ 
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Votre message ici..." required></textarea>
+      </div>
+ 
+      <button type="submit" class="btn-envoyer">Envoyer →</button>
+    </form>
+  </div>
+</footer>
+
+<!-- OVERLAY -->
+<div class="overlay-backdrop" id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-box">
+    <button class="overlay-close" onclick="closeOverlay(null, true)">✕</button>
+    <div id="overlay-img"></div>
+    <div class="overlay-body">
+      <div class="overlay-header">
+        <div class="overlay-title" id="overlay-title">Project</div>
+        <div class="overlay-date" id="overlay-date"></div>
+      </div>
+      <p class="overlay-desc" id="overlay-desc"></p>
+      <div class="overlay-badges" id="overlay-badges"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
