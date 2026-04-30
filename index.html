@@ -17,41 +17,32 @@
 <!-- NAV -->
 <nav class="navbar">
   <div class="nav-container">
-    <div class="nav-logo">
-      <a href="#">Y_</a>
-    </div>
-
+    <div class="nav-logo"><a href="#">Y_</a></div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about-me">À propos</a></li>
-      <li><a href="#skills">Skills</a></li>
-
       <li class="dropdown">
         <a href="#projects">Projets</a>
         <ul class="dropdown-menu">
           <li><a href="projects.html">Tous voir</a></li>
         </ul>
       </li>
-
+      <li><a href="#about-me">À propos</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contacts</a></li>
     </ul>
-
-    <!-- Burger button (mobile only) -->
     <button class="burger-btn" id="burgerBtn" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fermer">✕</button>
   <a href="#hero" class="mobile-nav-link">Home</a>
+  <a href="#projects" class="mobile-nav-link">Projets</a>
   <a href="#about-me" class="mobile-nav-link">À propos</a>
   <a href="#skills" class="mobile-nav-link">Skills</a>
-  <a href="#projects" class="mobile-nav-link">Projets</a>
   <a href="projects.html" class="mobile-nav-link" style="font-size:18px; opacity:0.6;">→ Tous voir</a>
   <a href="#contact" class="mobile-nav-link">Contact</a>
 </div>
@@ -59,35 +50,29 @@
 <!-- HERO -->
 <section id="hero" class="hero-section">
   <div class="hero-container">
-    
     <div class="hero-text-column">
       <h1 class="hero-title">
         <span class="line1">Hey,</span>
         <span class="line2">Moi c'est <span class="highlight">Yasmine</span></span>
         <span class="line3">Développeuse Web</span>
       </h1>
-      
       <a href="#contact" class="hero-btn">Contactez-moi</a>
     </div>
-
     <div class="hero-image-column">
       <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
-          <mask id="mask0" mask-type="alpha">
-              <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-          </mask>
-
-          <g mask="url(#mask0)">
-              <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" fill="var(--pink)"/>
-              
-              <image class="home__blob-img" x="0" y="0" width="100%" height="100%" href="img/photo.png"/>
-          </g>
+        <mask id="mask0" mask-type="alpha">
+          <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+        </mask>
+        <g mask="url(#mask0)">
+          <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" fill="var(--pink)"/>
+          <image class="home__blob-img" x="0" y="0" width="100%" height="100%" href="img/photo.png"/>
+        </g>
       </svg>
     </div>
-
   </div>
 </section>
 
-<!-- PINK BANNER -->
+<!-- BANNER -->
 <div class="banner">
   <div class="banner-contenair">
     <div class="banner-text">
@@ -105,145 +90,16 @@
 </div>
 
 
-<!-- ABOUT -->
-<section id="about-me" class="about-me-section">
-  <h2 class="about-me-title">A propos</h2>
-  <div class="about-me-content">
-    <p>
-      Salut moi c'est Yasmine ! J'ai 19 ans et je suis actuellement en deuxième année de bachelor Web et Multimédia à My Digtal School. Passionnée par le développement web, je suis à la recherche d'une alternance pour mettre en pratique mes compétences et continuer à apprendre dans ce domaine en constante évolution. 
-    </p>
-    <p>
-      Ce portfolio, c'est un peu le carnet de bord de mon parcours. Au fil de mon apprentissage et de mes expériences, j'ai pu me forgé un profil hybride en pratiquant tant dans le domaine du développement web que dans celui de l'UI design. Je me forme activement sur les technologies de la programmation web en réalisant régulièrement des projets personnels ou pour des indépendants. Je t'invite à jetter un œil à mes projets pour découvrir mon univers et mes dernières réalisations.
-
-    </p>
-  </div>
-</section>
-
-
-
-<section class="services-section">
-  <div class="services-grid">
-    
-    <div class="service-card card-light-pink">
-      <div class="service-icon-box bg-light-pink">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <path d="M62.6291 0.244895C59.678 -0.711934 56.6053 1.22125 55.7547 4.54086L33.5344 92.0224C32.6838 95.342 34.4024 98.7983 37.3535 99.7551C40.3047 100.712 43.3773 98.7788 44.2279 95.4591L66.4482 7.97764C67.2988 4.65803 65.5802 1.20172 62.6291 0.244895ZM73.8434 26.8213C71.6735 29.2622 71.6735 33.2262 73.8434 35.6671L86.5854 50L73.8434 64.3329C71.6735 66.7738 71.6735 70.7378 73.8434 73.1787C76.0134 75.6196 79.5374 75.6196 81.7073 73.1787L98.3725 54.4327C100.542 51.9918 100.542 48.0278 98.3725 45.5869L81.7073 26.8408C79.5374 24.3999 76.0134 24.3999 73.8434 26.8408V26.8213ZM26.1566 26.8213C23.9866 24.3804 20.4626 24.3804 18.2927 26.8213L1.62746 45.5673C-0.542488 48.0082 -0.542488 51.9722 1.62746 54.4131L18.2927 73.1592C20.4626 75.6001 23.9866 75.6001 26.1566 73.1592C28.3265 70.7183 28.3265 66.7543 26.1566 64.3134L13.4146 50L26.1392 35.6671C28.3092 33.2262 28.3092 29.2622 26.1392 26.8213H26.1566Z" fill="#FDBDB3"/>
-        </svg>
-
-      </div>
-      <p class="service-text" style="color: #febdb2;">
-        Je développe des fonctionnalités web en front-end et back-end, avec un code clair, structuré et respectueux des bonnes pratiques.
-      </p>
-    </div>
-
-    <div class="service-card card-medium-pink">
-      <div class="service-icon-box bg-medium-pink">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <path d="M43.75 0.5C47.0992 0.5 50.1164 1.52062 52.2852 3.14648C54.4539 4.77243 55.75 6.98009 55.75 9.375C55.75 11.2567 54.9558 13.012 53.5459 14.4775L53.5449 14.4785C52.2226 15.861 51.0625 17.621 51.0625 19.6875C51.0625 22.8933 53.6692 25.5 56.875 25.5H65.625C70.5246 25.5 74.5 29.4754 74.5 34.375V43.125C74.5 46.3308 77.1067 48.9375 80.3125 48.9375C82.3583 48.9375 84.1374 47.7788 85.5205 46.4561C86.9894 45.0617 88.7459 44.25 90.625 44.25C93.0199 44.25 95.2276 45.5461 96.8535 47.7148C98.4794 49.8836 99.5 52.9008 99.5 56.25C99.5 59.5992 98.4794 62.6164 96.8535 64.7852C95.2276 66.9539 93.0199 68.25 90.625 68.25C88.7416 68.25 86.9678 67.4542 85.5244 66.0479L85.5215 66.0449L85.2578 65.7988C83.9178 64.5818 82.2498 63.5625 80.3125 63.5625C77.1067 63.5625 74.5 66.1692 74.5 69.375V90.625C74.5 95.5246 70.5246 99.5 65.625 99.5H54.5312C52.3074 99.5 50.5 97.6926 50.5 95.4688C50.5 93.8884 51.5023 92.4381 52.876 91.417L52.8779 91.416C55.2376 89.6462 56.75 87.166 56.75 84.375C56.75 81.5942 55.2432 79.1143 52.8857 77.3467C50.5281 75.5791 47.2951 74.5 43.75 74.5C40.2049 74.5 36.9719 75.5791 34.6143 77.3467C32.2568 79.1143 30.75 81.5942 30.75 84.375C30.75 87.166 32.2624 89.6462 34.6221 91.416L34.624 91.417C35.9987 92.4388 37 93.8698 37 95.4688C37 97.6926 35.1926 99.5 32.9688 99.5H9.375C4.47536 99.5 0.5 95.5246 0.5 90.625V67.0312C0.500001 64.8074 2.30739 63 4.53125 63C6.11158 63 7.5619 64.0023 8.58301 65.376L8.58398 65.3779C10.3538 67.7376 12.834 69.25 15.625 69.25C18.4058 69.25 20.8857 67.7432 22.6533 65.3857C24.4209 63.0281 25.5 59.7951 25.5 56.25C25.5 52.7049 24.4209 49.4719 22.6533 47.1143C20.8857 44.7568 18.4058 43.25 15.625 43.25C12.834 43.25 10.3538 44.7624 8.58398 47.1221L8.58301 47.124C7.56115 48.4987 6.13022 49.5 4.53125 49.5C2.30739 49.5 0.500001 47.6926 0.5 45.4688V34.375C0.5 29.4754 4.47536 25.5 9.375 25.5H30.625C33.8308 25.5 36.4375 22.8933 36.4375 19.6875C36.4375 17.769 35.4188 16.085 34.2012 14.7422L33.9551 14.4785C32.5613 13.0098 31.75 11.2537 31.75 9.375C31.75 6.98009 33.0461 4.77243 35.2148 3.14648C37.3836 1.52062 40.4008 0.5 43.75 0.5Z" fill="#F43E7B" stroke="#F43E7B"/>
-        </svg>
-      </div>
-      <p class="service-text" style="color: #f7b6d2;">
-        Je réalise des sites web à l'aide de CMS, avec une intégration soignée, l'utilisation de plugins adaptés et une structure pensée pour être facilement administrable.
-      </p>
-    </div>
-
-    <div class="service-card card-dark-purple">
-      <div class="service-icon-box bg-dark-purple">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <path d="M100 50C100 50.1758 100 50.3516 100 50.5273C99.9219 57.6563 93.4388 62.5 86.3113 62.5H67.1939C62.0191 62.5 57.8207 66.6992 57.8207 71.875C57.8207 72.5391 57.8989 73.1836 58.016 73.8086C58.4261 75.8008 59.2853 77.7148 60.125 79.6484C61.3162 82.3437 62.4878 85.0195 62.4878 87.8516C62.4878 94.0625 58.2699 99.707 52.0601 99.9609C51.3767 99.9805 50.6932 100 49.9902 100C22.3784 100 0 77.6172 0 50C0 22.3828 22.398 0 50.0098 0C77.6216 0 100 22.3828 100 50ZM25.0146 56.25C25.0146 52.793 22.2222 50 18.7659 50C15.3095 50 12.5171 52.793 12.5171 56.25C12.5171 59.707 15.3095 62.5 18.7659 62.5C22.2222 62.5 25.0146 59.707 25.0146 56.25ZM25.0146 37.5C28.471 37.5 31.2634 34.707 31.2634 31.25C31.2634 27.793 28.471 25 25.0146 25C21.5583 25 18.7659 27.793 18.7659 31.25C18.7659 34.707 21.5583 37.5 25.0146 37.5ZM56.2585 18.75C56.2585 15.293 53.4661 12.5 50.0098 12.5C46.5534 12.5 43.761 15.293 43.761 18.75C43.761 22.207 46.5534 25 50.0098 25C53.4661 25 56.2585 22.207 56.2585 18.75ZM75.0049 37.5C78.4612 37.5 81.2537 34.707 81.2537 31.25C81.2537 27.793 78.4612 25 75.0049 25C71.5485 25 68.7561 27.793 68.7561 31.25C68.7561 34.707 71.5485 37.5 75.0049 37.5Z" fill="#300D19"/>
-        </svg>
-      </div>
-      <p class="service-text" style="color: #96596E;">
-        Je crée des interfaces claires et cohérentes, pensées pour l'expérience utilisateur, du wireframe au design system prêt à être intégré.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- SKILLS -->
-<section id="skills" class="skills-section">
-  <h2 class="skills-main-title">Skills</h2>
-
-  <div class="skills-filters">
-    <button class="filter-btn active btn-all" data-filter="all">All</button>
-    <button class="filter-btn btn-code" data-filter="code">Code</button>
-    <button class="filter-btn btn-cms" data-filter="cms">CMS</button>
-    <button class="filter-btn btn-ui" data-filter="ui">UI</button>
-  </div>
-
-  <div class="skills-list">
-    
-    <div class="skills-row" data-category="code">
-      <h3 class="skills-cat-title">Langages Front-End :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_html.svg" alt=""><span>HTML</span></div>
-        <div class="skill-item"><img src="img/logo_css.svg" alt=""><span>CSS</span></div>
-        <div class="skill-item"><img src="img/logo_javascript.svg" alt=""><span>JAVASCRIPT</span></div>
-        <div class="skill-item"><img src="img/logo_typescript.svg" alt=""><span>TYPESCRIPT</span></div>
-        <div class="skill-item"><img src="img/logo_react.svg" alt=""><span>REACT</span></div>
-        <div class="skill-item"><img src="img/logo_sass.svg" alt=""><span>SASS</span></div>
-      </div>
-    </div>
-
-    <div class="skills-row" data-category="code">
-      <h3 class="skills-cat-title">Langages Back-End :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_python.svg" alt=""><span>PYTHON</span></div>
-        <div class="skill-item"><img src="img/logo_sql.svg" alt=""><span>SQL</span></div>
-        <div class="skill-item"><img src="img/logo_php.svg" alt=""><span>PHP</span></div>
-        <div class="skill-item"><img src="img/logo_nodejs.svg" alt=""><span>NODE.JS</span></div>
-        <div class="skill-item"><img src="img/logo_prisma.svg" alt=""><span>PRISMA</span></div>
-      </div>
-    </div>
-
-    <div class="skills-row" data-category="code">
-      <h3 class="skills-cat-title">Framework :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_cakephp.svg" alt=""><span>CAKEPHP</span></div>
-        <div class="skill-item"><img src="img/logo_nextjs.svg" alt=""><span>NEXT.JS</span></div>
-        <div class="skill-item"><img src="img/logo_tailwind.svg" alt=""><span>TAILWIND</span></div>
-      </div>
-    </div>
-
-    <div class="skills-row" data-category="code">
-      <h3 class="skills-cat-title">Logiciels :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_vscode.svg" alt=""><span>VS CODE</span></div>
-        <div class="skill-item"><img src="img/github.svg" alt=""><span>GITHUB</span></div>
-      </div>
-    </div>
-
-    <div class="skills-row" data-category="cms">
-      <h3 class="skills-cat-title">CMS :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_wordpress.svg" alt=""><span>WORDPRESS</span></div>
-      </div>
-    </div>
-
-    <div class="skills-row" data-category="ui">
-      <h3 class="skills-cat-title">UI :</h3>
-      <div class="skills-icons">
-        <div class="skill-item"><img src="img/logo_figma.svg" alt=""><span>FIGMA</span></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- PROJECTS -->
+<!-- PROJETS -->
 <div class="projects-wrapper">
   <section id="projects">
     <div class="section-title">Projets</div>
     <div class="projects-grid">
 
       <div class="project-card cat-code" onclick="openOverlay(
-        'Ferme Maher – Oasis', 
-        'Janvier 2026', 
-        'Développement d\'une application Full-stack permettant de privatiser des espaces de loisirs au Maroc. J\'ai implémenté un système d\'authentification sécurisé et une gestion de base de données optimisée.', 
+        'Ferme Maher – Oasis',
+        'Janvier 2026 – En cours',
+        '<strong>📍 Contexte</strong><br>Mission freelance pour ma tante, gérante d\'une ferme saisonnière au Maroc proposant la location d\'espaces verts avec piscine et restauration (petits-déjeuners et déjeuners). Projet individuel lancé en janvier 2026, en cours de développement.<br><br><strong>🎯 Objectifs</strong><br>Digitaliser la gestion des réservations pour remplacer un suivi manuel, offrir aux clients une interface de réservation autonome, et donner à l\'administratrice une vue centralisée sur les disponibilités et les commandes.<br><br><strong>⚙️ Actions réalisées</strong><br>Conception du schéma de base de données (tables users et reservations). Développement Full-stack avec Next.js 15, Prisma et PostgreSQL. Mise en place d\'un système d\'authentification avec rôles distincts (client / admin) via Auth.js v5. Intégration de Tailwind CSS pour l\'interface.<br><br><strong>📊 Résultats</strong><br>Application à mi-parcours : authentification fonctionnelle, modèle de données opérationnel, interface en cours d\'intégration. Livraison prévue avant la saison estivale.',
         ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Auth.js v5', 'Prisma', 'PostgreSQL'],
         'img/fermemaher.png'
       )">
@@ -259,10 +115,10 @@
       </div>
 
       <div class="project-card cat-code" onclick="openOverlay(
-        'On Sort ?', 
-        'Mars 2026', 
-        'On sort est une application mobile dédiée à l’organisation d’activités en France, pensée spécialement pour les groupes d’amis. Son objectif est de simplifier la prise de décision collective et de rendre l’organisation de sorties plus fluide, interactive et équitable.', 
-        ['CakePHP', 'MySQL'],
+        'On Sort ?',
+        'Mars 2026',
+        '<strong>📍 Contexte</strong><br>Projet d\'école réalisé en équipe de 4 personnes (2 créatifs, 2 développeuses) sur 4 jours. Contrainte technique : utiliser CakePHP sans recourir au scaffolding automatique.<br><br><strong>🎯 Objectifs</strong><br>Créer une application dédiée à l\'organisation de sorties en groupe, permettant de simplifier la prise de décision collective et de rendre la planification d\'activités plus fluide et équitable entre amis.<br><br><strong>⚙️ Actions réalisées</strong><br>Développement des fonctionnalités principales : wishlists partagées, système de votes pour choisir les activités, saisie des disponibilités et du budget par membre, chat de groupe et calendrier des activités planifiées. Architecture MVC avec CakePHP et base de données MySQL.<br><br><strong>📊 Résultats</strong><br>Application fonctionnelle livrée dans les délais impartis. Projet actuellement en pause, avec l\'ambition d\'une reprise et d\'un déploiement réel à terme.',
+        ['CakePHP', 'MySQL', 'HTML', 'CSS'],
         'img/onsort2.avif'
       )">
         <div class="project-img"><img src="img/onsort.png" alt=""></div>
@@ -271,16 +127,16 @@
             <span class="project-name">On sort ?</span>
             <span class="project-date">Mars 2026</span>
           </div>
-          <p class="project-desc">Projet d'école: Développement d'une application avec la contrainte d'utiliser CakePHP sans recourir au scaffolding en seulement 4 jours.</p>
+          <p class="project-desc">Projet d'école : application de planification de sorties en groupe avec votes, wishlists et calendrier.</p>
           <button class="btn-savoir">En savoir plus ›</button>
         </div>
       </div>
 
       <div class="project-card cat-code" onclick="openOverlay(
-        'The Glazed', 
-        'Février 2026', 
-        'Développement d’un jeu de survie narratif réalisé dans le cadre d’un défi pédagogique de 4 jours. Au-delà de la programmation, j\’ai conçu l’intégralité de l’univers (Lore) et défini la direction scénaristique. L\'enjeu majeur a été de créer une expérience où chaque décision du joueur entraîne des conséquences concrètes sur l\'évolution de l\'histoire. J\'ai mis en place un système de variables complexes pour gérer l\'impact des choix sur le gameplay et la survie du personnage, forçant le joueur à des choix moraux et stratégiques difficiles.', 
-        ['HMTL', 'CSS', 'Vanilla JS'],
+        'The Glazed',
+        'Février 2026',
+        '<strong>📍 Contexte</strong><br>Projet d\'école individuel réalisé en 4 jours. Contrainte : concevoir un jeu vidéo dont le thème devait être lié à la température. Développement en Vanilla JS, HTML et CSS, sans framework ni moteur externe.<br><br><strong>🎯 Objectifs</strong><br>Développer un jeu de survie narratif jouable dans le navigateur, où chaque décision du joueur a des conséquences concrètes sur l\'évolution de l\'histoire et la survie du personnage, en alliant programmation et direction créative.<br><br><strong>⚙️ Actions réalisées</strong><br>Conception intégrale de l\'univers et du scénario (lore, personnages, embranchements narratifs). Développement d\'un système de variables pour gérer les choix du joueur, son état de survie et l\'évolution de l\'histoire. Intégration d\'une interface immersive en HTML/CSS pur.<br><br><strong>📊 Résultats</strong><br>Jeu narratif complet et jouable livré en 4 jours, valorisant une double compétence : développement front-end et direction artistique / scénaristique.',
+        ['HTML', 'CSS', 'Vanilla JS'],
         'img/theglazed.png'
       )">
         <div class="project-img"><img src="img/tg.jpg" alt=""></div>
@@ -289,7 +145,7 @@
             <span class="project-name">The Glazed</span>
             <span class="project-date">Février 2026</span>
           </div>
-          <p class="project-desc">Projet d'école : Développement d'un jeu vidéo de survie narratif avec pour contrainte de respecter un thème lié à la température, réalisé en 4 jours.</p>
+          <p class="project-desc">Projet d'école : jeu vidéo de survie narratif en Vanilla JS, conçu en 4 jours.</p>
           <button class="btn-savoir">En savoir plus ›</button>
         </div>
       </div>
@@ -298,38 +154,135 @@
   </section>
 </div>
 
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-grid">
+    <div class="service-card card-light-pink">
+      <div class="service-icon-box bg-light-pink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <path d="M62.6291 0.244895C59.678 -0.711934 56.6053 1.22125 55.7547 4.54086L33.5344 92.0224C32.6838 95.342 34.4024 98.7983 37.3535 99.7551C40.3047 100.712 43.3773 98.7788 44.2279 95.4591L66.4482 7.97764C67.2988 4.65803 65.5802 1.20172 62.6291 0.244895ZM73.8434 26.8213C71.6735 29.2622 71.6735 33.2262 73.8434 35.6671L86.5854 50L73.8434 64.3329C71.6735 66.7738 71.6735 70.7378 73.8434 73.1787C76.0134 75.6196 79.5374 75.6196 81.7073 73.1787L98.3725 54.4327C100.542 51.9918 100.542 48.0278 98.3725 45.5869L81.7073 26.8408C79.5374 24.3999 76.0134 24.3999 73.8434 26.8408V26.8213ZM26.1566 26.8213C23.9866 24.3804 20.4626 24.3804 18.2927 26.8213L1.62746 45.5673C-0.542488 48.0082 -0.542488 51.9722 1.62746 54.4131L18.2927 73.1592C20.4626 75.6001 23.9866 75.6001 26.1566 73.1592C28.3265 70.7183 28.3265 66.7543 26.1566 64.3134L13.4146 50L26.1392 35.6671C28.3092 33.2262 28.3092 29.2622 26.1392 26.8213H26.1566Z" fill="#FDBDB3"/>
+        </svg>
+      </div>
+      <p class="service-text" style="color: #febdb2;">Je développe des fonctionnalités web en front-end et back-end, avec un code clair, structuré et respectueux des bonnes pratiques.</p>
+    </div>
+    <div class="service-card card-medium-pink">
+      <div class="service-icon-box bg-medium-pink">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <path d="M43.75 0.5C47.0992 0.5 50.1164 1.52062 52.2852 3.14648C54.4539 4.77243 55.75 6.98009 55.75 9.375C55.75 11.2567 54.9558 13.012 53.5459 14.4775L53.5449 14.4785C52.2226 15.861 51.0625 17.621 51.0625 19.6875C51.0625 22.8933 53.6692 25.5 56.875 25.5H65.625C70.5246 25.5 74.5 29.4754 74.5 34.375V43.125C74.5 46.3308 77.1067 48.9375 80.3125 48.9375C82.3583 48.9375 84.1374 47.7788 85.5205 46.4561C86.9894 45.0617 88.7459 44.25 90.625 44.25C93.0199 44.25 95.2276 45.5461 96.8535 47.7148C98.4794 49.8836 99.5 52.9008 99.5 56.25C99.5 59.5992 98.4794 62.6164 96.8535 64.7852C95.2276 66.9539 93.0199 68.25 90.625 68.25C88.7416 68.25 86.9678 67.4542 85.5244 66.0479L85.5215 66.0449L85.2578 65.7988C83.9178 64.5818 82.2498 63.5625 80.3125 63.5625C77.1067 63.5625 74.5 66.1692 74.5 69.375V90.625C74.5 95.5246 70.5246 99.5 65.625 99.5H54.5312C52.3074 99.5 50.5 97.6926 50.5 95.4688C50.5 93.8884 51.5023 92.4381 52.876 91.417L52.8779 91.416C55.2376 89.6462 56.75 87.166 56.75 84.375C56.75 81.5942 55.2432 79.1143 52.8857 77.3467C50.5281 75.5791 47.2951 74.5 43.75 74.5C40.2049 74.5 36.9719 75.5791 34.6143 77.3467C32.2568 79.1143 30.75 81.5942 30.75 84.375C30.75 87.166 32.2624 89.6462 34.6221 91.416L34.624 91.417C35.9987 92.4388 37 93.8698 37 95.4688C37 97.6926 35.1926 99.5 32.9688 99.5H9.375C4.47536 99.5 0.5 95.5246 0.5 90.625V67.0312C0.500001 64.8074 2.30739 63 4.53125 63C6.11158 63 7.5619 64.0023 8.58301 65.376L8.58398 65.3779C10.3538 67.7376 12.834 69.25 15.625 69.25C18.4058 69.25 20.8857 67.7432 22.6533 65.3857C24.4209 63.0281 25.5 59.7951 25.5 56.25C25.5 52.7049 24.4209 49.4719 22.6533 47.1143C20.8857 44.7568 18.4058 43.25 15.625 43.25C12.834 43.25 10.3538 44.7624 8.58398 47.1221L8.58301 47.124C7.56115 48.4987 6.13022 49.5 4.53125 49.5C2.30739 49.5 0.500001 47.6926 0.5 45.4688V34.375C0.5 29.4754 4.47536 25.5 9.375 25.5H30.625C33.8308 25.5 36.4375 22.8933 36.4375 19.6875C36.4375 17.769 35.4188 16.085 34.2012 14.7422L33.9551 14.4785C32.5613 13.0098 31.75 11.2537 31.75 9.375C31.75 6.98009 33.0461 4.77243 35.2148 3.14648C37.3836 1.52062 40.4008 0.5 43.75 0.5Z" fill="#F43E7B" stroke="#F43E7B"/>
+        </svg>
+      </div>
+      <p class="service-text" style="color: #f7b6d2;">Je réalise des sites web à l'aide de CMS, avec une intégration soignée, l'utilisation de plugins adaptés et une structure pensée pour être facilement administrable.</p>
+    </div>
+    <div class="service-card card-dark-purple">
+      <div class="service-icon-box bg-dark-purple">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <path d="M100 50C100 50.1758 100 50.3516 100 50.5273C99.9219 57.6563 93.4388 62.5 86.3113 62.5H67.1939C62.0191 62.5 57.8207 66.6992 57.8207 71.875C57.8207 72.5391 57.8989 73.1836 58.016 73.8086C58.4261 75.8008 59.2853 77.7148 60.125 79.6484C61.3162 82.3437 62.4878 85.0195 62.4878 87.8516C62.4878 94.0625 58.2699 99.707 52.0601 99.9609C51.3767 99.9805 50.6932 100 49.9902 100C22.3784 100 0 77.6172 0 50C0 22.3828 22.398 0 50.0098 0C77.6216 0 100 22.3828 100 50ZM25.0146 56.25C25.0146 52.793 22.2222 50 18.7659 50C15.3095 50 12.5171 52.793 12.5171 56.25C12.5171 59.707 15.3095 62.5 18.7659 62.5C22.2222 62.5 25.0146 59.707 25.0146 56.25ZM25.0146 37.5C28.471 37.5 31.2634 34.707 31.2634 31.25C31.2634 27.793 28.471 25 25.0146 25C21.5583 25 18.7659 27.793 18.7659 31.25C18.7659 34.707 21.5583 37.5 25.0146 37.5ZM56.2585 18.75C56.2585 15.293 53.4661 12.5 50.0098 12.5C46.5534 12.5 43.761 15.293 43.761 18.75C43.761 22.207 46.5534 25 50.0098 25C53.4661 25 56.2585 22.207 56.2585 18.75ZM75.0049 37.5C78.4612 37.5 81.2537 34.707 81.2537 31.25C81.2537 27.793 78.4612 25 75.0049 25C71.5485 25 68.7561 27.793 68.7561 31.25C68.7561 34.707 71.5485 37.5 75.0049 37.5Z" fill="#300D19"/>
+        </svg>
+      </div>
+      <p class="service-text" style="color: #96596E;">Je crée des interfaces claires et cohérentes, pensées pour l'expérience utilisateur, du wireframe au design system prêt à être intégré.</p>
+    </div>
+  </div>
+</section>
 
-<!-- EXPERIENCE -->
+<!-- A PROPOS -->
+<section id="about-me" class="about-me-section">
+  <h2 class="about-me-title">A propos</h2>
+  <div class="about-me-content">
+    <p>Salut moi c'est Yasmine ! J'ai 19 ans et je suis actuellement en deuxième année de bachelor Web et Multimédia à My Digtal School. Passionnée par le développement web, je suis à la recherche d'une alternance pour mettre en pratique mes compétences et continuer à apprendre dans ce domaine en constante évolution.</p>
+    <p>Ce portfolio, c'est un peu le carnet de bord de mon parcours. Au fil de mon apprentissage et de mes expériences, j'ai pu me forgé un profil hybride en pratiquant tant dans le domaine du développement web que dans celui de l'UI design. Je me forme activement sur les technologies de la programmation web en réalisant régulièrement des projets personnels ou pour des indépendants. Je t'invite à jetter un œil à mes projets pour découvrir mon univers et mes dernières réalisations.</p>
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+  <h2 class="skills-main-title">Skills</h2>
+  <div class="skills-filters">
+    <button class="filter-btn active btn-all" data-filter="all">All</button>
+    <button class="filter-btn btn-code" data-filter="code">Code</button>
+    <button class="filter-btn btn-cms" data-filter="cms">CMS</button>
+    <button class="filter-btn btn-ui" data-filter="ui">UI</button>
+  </div>
+  <div class="skills-list">
+    <div class="skills-row" data-category="code">
+      <h3 class="skills-cat-title">Langages Front-End :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_html.svg" alt=""><span>HTML</span></div>
+        <div class="skill-item"><img src="img/logo_css.svg" alt=""><span>CSS</span></div>
+        <div class="skill-item"><img src="img/logo_javascript.svg" alt=""><span>JAVASCRIPT</span></div>
+        <div class="skill-item"><img src="img/logo_typescript.svg" alt=""><span>TYPESCRIPT</span></div>
+        <div class="skill-item"><img src="img/logo_react.svg" alt=""><span>REACT</span></div>
+        <div class="skill-item"><img src="img/logo_sass.svg" alt=""><span>SASS</span></div>
+      </div>
+    </div>
+    <div class="skills-row" data-category="code">
+      <h3 class="skills-cat-title">Langages Back-End :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_python.svg" alt=""><span>PYTHON</span></div>
+        <div class="skill-item"><img src="img/logo_sql.svg" alt=""><span>SQL</span></div>
+        <div class="skill-item"><img src="img/logo_php.svg" alt=""><span>PHP</span></div>
+        <div class="skill-item"><img src="img/logo_nodejs.svg" alt=""><span>NODE.JS</span></div>
+        <div class="skill-item"><img src="img/logo_prisma.svg" alt=""><span>PRISMA</span></div>
+      </div>
+    </div>
+    <div class="skills-row" data-category="code">
+      <h3 class="skills-cat-title">Framework :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_cakephp.svg" alt=""><span>CAKEPHP</span></div>
+        <div class="skill-item"><img src="img/logo_nextjs.svg" alt=""><span>NEXT.JS</span></div>
+        <div class="skill-item"><img src="img/logo_tailwind.svg" alt=""><span>TAILWIND</span></div>
+      </div>
+    </div>
+    <div class="skills-row" data-category="code">
+      <h3 class="skills-cat-title">Logiciels :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_vscode.svg" alt=""><span>VS CODE</span></div>
+        <div class="skill-item"><img src="img/github.svg" alt=""><span>GITHUB</span></div>
+      </div>
+    </div>
+    <div class="skills-row" data-category="cms">
+      <h3 class="skills-cat-title">CMS :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_wordpress.svg" alt=""><span>WORDPRESS</span></div>
+      </div>
+    </div>
+    <div class="skills-row" data-category="ui">
+      <h3 class="skills-cat-title">UI :</h3>
+      <div class="skills-icons">
+        <div class="skill-item"><img src="img/logo_figma.svg" alt=""><span>FIGMA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCES -->
 <section id="experience" class="experience-section">
   <h2 class="section-title">Expériences professionnelles</h2>
-  
   <div class="timeline">
-    
+
     <div class="tl-item">
       <div class="tl-content tl-left">
         <h3 class="tl-title">Projet Indépendant – Plateforme de Réservation de Loisirs (Ferme Maher) – En cours</h3>
         <p class="tl-text">Digitalisation d'une gestion de réservations via une application Full-stack (Next.js 15, Prisma). Design d'une interface immersive et mise en place d'une architecture sécurisée avec Auth.js v5 et PostgreSQL.</p>
       </div>
-      
       <div class="tl-center">
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
-      
       <div class="tl-content tl-right">
-        <div class="tl-image-circle"><img src="img/fm.avif" alt=""></div> </div>
+        <div class="tl-image-circle"><img src="img/fm.avif" alt=""></div>
+      </div>
     </div>
 
     <div class="tl-item">
       <div class="tl-content tl-left">
-        <div class="tl-image-circle"><img src="img/mycrepe.jpg" alt=""></div> 
+        <div class="tl-image-circle"><img src="img/mycrepe.jpg" alt=""></div>
       </div>
-      
       <div class="tl-center">
         <div class="tl-dot"></div>
         <div class="tl-line"></div>
       </div>
-      
       <div class="tl-content tl-right">
         <h3 class="tl-title">Alternance Développement web chez My Crêpe – Décembre 2025/Aujourd'hui</h3>
         <p class="tl-text">Réalisation de maquettes UI et intégration front-end en code, avec une attention portée à la cohérence visuelle, au responsive design et au respect des bonnes pratiques d'intégration.</p>
@@ -341,20 +294,18 @@
         <h3 class="tl-title">Stage Webdesign et Développement WordPress chez Elonalae – Avril 2025/Juin 2025</h3>
         <p class="tl-text">Conception et intégration d'un site vitrine responsive, de Figma à WordPress, avec mise en place d'un design system UI, configuration des plugins et optimisation des performances (SEO, accessibilité).</p>
       </div>
-      
       <div class="tl-center">
         <div class="tl-dot"></div>
       </div>
-      
       <div class="tl-content tl-right">
-        <div class="tl-image-circle"><img src="img/ww.jpg" alt=""></div> 
+        <div class="tl-image-circle"><img src="img/ww.jpg" alt=""></div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT / FOOTER -->
+<!-- CONTACT -->
 <footer id="contact">
   <div class="footer-left">
     <div class="footer-logo"></div>
@@ -366,10 +317,8 @@
     </div>
     <a class="footer-cv" id="downloadCV" href="img/cvDev_last.pdf">Télécharger mon CV ici</a>
   </div>
-
   <div class="contact-container">
     <form class="contact-form" action="https://formspree.io/f/xjgjzvpa" method="POST">
-      
       <div class="form-row">
         <div class="form-group">
           <label>Prénom</label>
@@ -380,22 +329,18 @@
           <input type="text" name="lastname" placeholder="Nom" required />
         </div>
       </div>
-
       <div class="form-group">
         <label>Numéro de téléphone</label>
         <input type="tel" name="phone" placeholder="06 23 45 67 89" />
       </div>
-
       <div class="form-group">
         <label>Email</label>
         <input type="email" name="email" placeholder="votre@email.com" required />
       </div>
-
       <div class="form-group">
         <label>Message</label>
         <textarea name="message" placeholder="Votre message ici..." required></textarea>
       </div>
-
       <button type="submit" class="btn-envoyer">Envoyer →</button>
     </form>
   </div>
@@ -408,13 +353,11 @@
     <div id="overlay-img"></div>
     <div class="overlay-body">
       <div class="overlay-header">
-
         <div class="overlay-title" id="overlay-title"></div>
         <div class="overlay-date" id="overlay-date"></div>
       </div>
       <p class="overlay-desc" id="overlay-desc"></p>
       <div class="overlay-badges" id="overlay-badges"></div>
-
     </div>
   </div>
 </div>

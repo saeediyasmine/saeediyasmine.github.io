@@ -192,20 +192,20 @@ body { font-family: var(--font); color: var(--dark); background: #fff; }
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Petite ombre sous le bouton */
-  max-width: fit-content; /* S'adapte au texte pour ne pas être trop large */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  max-width: fit-content;
 }
 
 .hero-btn:hover {
-  background-color: var(--pink-light); /* Une variante plus foncée du rose (optionnel, défini le dans tes vars) */
-  transform: translateY(-2px); /* Petit effet de survol */
+  background-color: var(--pink-light);
+  transform: translateY(-2px);
 }
 
-/* --- Colonne Droite : Image --- */
+
 .hero-image-column {
-  flex: 1; /* L'image prend moins de place (40-45%) */
+  flex: 1; 
   display: flex;
-  justify-content: center; /* Aligne l'image à droite */
+  justify-content: center;
 }
 
 .home__blob {
